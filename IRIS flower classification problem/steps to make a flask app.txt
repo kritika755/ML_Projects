@@ -1,0 +1,14 @@
+step1. make a basic app.py file for flask with run method and render index.html
+step2. make index_html file (basically a form which will take values from you and send it to server 
+step3. create a basic ml model in model.py file and for creating a model put it inside a function--training model() and return the trained model as a part of that function
+step4.in app.py file .. in your function where you are rendering basic index.html (function name is basic() in our case
+           a)put a request.method=='POST' to get all values from frontend to server
+           b)get all attributes from html file, use same name(NAME column in index.html file should be same as request.form(name) in app.py file.
+           c)declare a pred variable for output prediction which takes all input and return output.
+           d) import your model, get training model() function from there , predict value by model_name.predict(features) and then pass the predicted value to the index.html file using jinja2 template..
+                     nothing fancy here--
+                            return render_template('index.html',prediction_value=prediction_value)
+                            and then this prediction_value(exact variable will be used to display output on your index.html page)
+
+
+
